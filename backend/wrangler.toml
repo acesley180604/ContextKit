@@ -1,0 +1,27 @@
+name = "contextkit-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# D1 Database (SQLite at the edge)
+[[d1_databases]]
+binding = "DB"
+database_name = "contextkit"
+database_id = "your-database-id-here"
+
+# Environment Variables
+[vars]
+ENVIRONMENT = "production"
+
+# Rate Limiting with Durable Objects (optional)
+# [[durable_objects.bindings]]
+# name = "RATE_LIMITER"
+# class_name = "RateLimiter"
+
+# Development environment
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+# KV namespace for caching (optional)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"

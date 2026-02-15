@@ -1,0 +1,31 @@
+{
+  "name": "contextkit-api",
+  "version": "1.0.0",
+  "description": "ContextKit Backend API - Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env development",
+    "db:init": "wrangler d1 execute contextkit --file=./schema/schema.sql",
+    "db:studio": "wrangler d1 studio contextkit",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "analytics",
+    "context",
+    "cloudflare",
+    "workers",
+    "edge"
+  ],
+  "author": "ContextKit",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.22.0"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}
